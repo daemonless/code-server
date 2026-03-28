@@ -1,0 +1,69 @@
+name: code-server
+
+x-daemonless:
+  title: "code-server"
+  icon: ":material-apps:"
+  category: "Development"
+  description: "code-server on FreeBSD."
+  notes: |
+    !!! warning "Work in Progress"
+        This image is functional but may change significantly in a future release.
+
+    Common dev tools (gcc, clang, llvm, python, gmake) are baked into the image for now.
+
+    ## Installing Packages
+
+    This is a known limitation of this WIP image and will likely improve in a future release.
+
+    Due to FreeBSD jail restrictions, `pkg install` cannot be run from the code-server terminal directly.
+    Install additional packages from the host using `podman exec`:
+
+    ```sh
+    # Podman
+    doas podman exec -it -u root code-server pkg install rust cargo
+
+    # AppJail
+    doas appjail cmd jexec code_server pkg install rust cargo
+    ```
+
+    !!! warning "Packages are not persistent"
+        If you recreate the container, you will need to reinstall any packages you have added.
+  upstream_url: "https://github.com/coder/code-server"
+  web_url: "https://coder.com/docs/code-server"
+  upstream_binary: true
+  user: "bsd"
+  mlock: false
+  community: ""
+
+  appjail:
+
+  docs:
+    env:
+      PUID: "User ID for the application process"
+      PGID: "Group ID for the application process"
+      TZ: "Timezone for the container"
+      PASSWORD: "Password for web UI (leave unset to disable auth)"
+      DEFAULT_WORKSPACE: "Default folder opened in the editor (default: /config/workspace)"
+    volumes:
+      /config: "Configuration directory"
+    ports:
+      8080: "Web UI"
+
+services:
+  code-server:
+    image: ghcr.io/daemonless/code-server:latest
+    container_name: code-server
+    restart: unless-stopped
+    
+    
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+
+    volumes:
+      - /path/to/containers/code-server:/config
+
+    ports:
+      - 8080:8080

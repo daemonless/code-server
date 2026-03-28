@@ -1,0 +1,20 @@
+#!/bin/sh
+if [ -n "${PASSWORD}" ]; then
+    AUTH="password"
+    AUTH_ARGS="--password ${PASSWORD}"
+else
+    AUTH="none"
+    AUTH_ARGS=""
+fi
+
+mkdir -p "${DEFAULT_WORKSPACE:-/config/workspace}" /config/data /config/extensions
+chown bsd:bsd "${DEFAULT_WORKSPACE:-/config/workspace}" /config/data /config/extensions
+cd "${DEFAULT_WORKSPACE:-/config/workspace}"
+exec s6-setuidgid bsd code-server \
+    --bind-addr 0.0.0.0:8080 \
+    --user-data-dir /config/data \
+    --extensions-dir /config/extensions \
+    --disable-telemetry \
+    --auth "${AUTH}" \
+    ${AUTH_ARGS} \
+    "${DEFAULT_WORKSPACE:-/config/workspace}"

@@ -1,0 +1,11 @@
+--- a/node_modules/node-pty/src/unix/pty.cc
++++ b/node_modules/node-pty/src/unix/pty.cc
+@@ -113,7 +113,7 @@ struct ExitEvent {
+   int exit_code = 0, signal_code = 0;
+ };
+
+-#if defined(__linux__)
++#if defined(__linux__) || defined(__FreeBSD__)
+
+ static int
+ SetCloseOnExec(int fd) {
