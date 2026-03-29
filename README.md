@@ -8,7 +8,7 @@ Source: dbuild templates
 [![Build Status](https://img.shields.io/github/actions/workflow/status/daemonless/code-server/build.yaml?style=flat-square&label=Build&color=green)](https://github.com/daemonless/code-server/actions)
 [![Last Commit](https://img.shields.io/github/last-commit/daemonless/code-server?style=flat-square&label=Last+Commit&color=blue)](https://github.com/daemonless/code-server/commits)
 
-code-server on FreeBSD.
+VS Code in the browser — run a full development environment on your FreeBSD server and access it from anywhere.
 
 | | |
 |---|---|
@@ -150,6 +150,9 @@ Access at: `http://localhost:8080`
     This image is functional but may change significantly in a future release.
 
 Common dev tools (gcc, clang, llvm, python, gmake) are baked into the image for now.
+
+!!! warning "No sudo / su / doas in Terminal"
+    Podman strips the setuid bit from binaries at runtime, so `sudo`, `su`, and `doas` will not work inside the code-server terminal. To run commands as root, use `podman exec` from the host.
 
 ## Installing Packages
 

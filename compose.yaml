@@ -2,14 +2,17 @@ name: code-server
 
 x-daemonless:
   title: "code-server"
-  icon: ":material-apps:"
+  icon: ":material-microsoft-visual-studio-code:"
   category: "Development"
-  description: "code-server on FreeBSD."
+  description: "VS Code in the browser — run a full development environment on your FreeBSD server and access it from anywhere."
   notes: |
     !!! warning "Work in Progress"
         This image is functional but may change significantly in a future release.
 
     Common dev tools (gcc, clang, llvm, python, gmake) are baked into the image for now.
+
+    !!! warning "No sudo / su / doas in Terminal"
+        Podman strips the setuid bit from binaries at runtime, so `sudo`, `su`, and `doas` will not work inside the code-server terminal. To run commands as root, use `podman exec` from the host.
 
     ## Installing Packages
 
