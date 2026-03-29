@@ -38,7 +38,7 @@ x-daemonless:
   mlock: false
   community: ""
 
-  appjail:
+  appjail: true
 
   docs:
     env:
