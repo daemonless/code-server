@@ -20,8 +20,8 @@ RUN pkg update && \
     FreeBSD-toolchain \
     FreeBSD-clibs-dev \
     FreeBSD-runtime-dev \
-    node \
-    npm \
+    node22 \
+    npm-node22 \
     python3 \
     gmake \
     pkgconf \
@@ -78,7 +78,7 @@ ARG FREEBSD_ARCH=amd64
 ARG APP_VERSION=""
 ARG UPSTREAM_URL="https://registry.npmjs.org/code-server/latest"
 ARG UPSTREAM_JQ=".version"
-ARG PACKAGES="node npm ca_root_nss libinotify doas python3 gmake gcc llvm FreeBSD-clang FreeBSD-toolchain"
+ARG PACKAGES="node22 npm-node22 ca_root_nss libinotify doas python3 gmake gcc llvm FreeBSD-clang FreeBSD-toolchain"
 
 LABEL org.opencontainers.image.title="code-server" \
       org.opencontainers.image.description="code-server on FreeBSD." \

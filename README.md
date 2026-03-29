@@ -13,7 +13,7 @@ code-server on FreeBSD.
 | | |
 |---|---|
 | **Port** | 8080 |
-| **Registry** | `localhost/code-server` |
+| **Registry** | `ghcr.io/daemonless/code-server` |
 | **Source** | [https://github.com/coder/code-server](https://github.com/coder/code-server) |
 | **Website** | [https://coder.com/docs/code-server](https://coder.com/docs/code-server) |
 
@@ -34,7 +34,7 @@ Before deploying, ensure your host environment is ready. See the [Quick Start Gu
 ```yaml
 services:
   code-server:
-    image: localhost/code-server:latest
+    image: ghcr.io/daemonless/code-server:latest
     container_name: code-server
     environment:
       - PUID=1000
@@ -88,7 +88,7 @@ volumes:
 ARG tag=latest
 
 OPTION overwrite=force
-OPTION from=localhost/code-server:${tag}
+OPTION from=ghcr.io/daemonless/code-server:${tag}
 ```
 
 ### Podman CLI
@@ -100,7 +100,7 @@ podman run -d --name code-server \
   -e PGID=1000 \
   -e TZ=UTC \
   -v /path/to/containers/code-server:/config \
-  localhost/code-server:latest
+  ghcr.io/daemonless/code-server:latest
 ```
 
 ### Ansible
@@ -109,7 +109,7 @@ podman run -d --name code-server \
 - name: Deploy code-server
   containers.podman.podman_container:
     name: code-server
-    image: localhost/code-server:latest
+    image: ghcr.io/daemonless/code-server:latest
     state: started
     restart_policy: always
     env:
@@ -174,3 +174,6 @@ doas appjail cmd jexec code_server pkg install rust cargo
 **User:** `bsd` (UID/GID via PUID/PGID, defaults to 1000:1000)
 **Base:** FreeBSD 15.0
 
+---
+
+Need help? Join our [Discord](https://discord.gg/Kb9tkhecZT) community.
