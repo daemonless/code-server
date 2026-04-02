@@ -6,8 +6,9 @@ const fs = require('fs');
 const f = '/usr/local/lib/node_modules/code-server/lib/vscode/out/server-main.js';
 let s = fs.readFileSync(f, 'utf8');
 // Use regex to match the minified variable name which changes across versions.
-const orig = /(\w+=vs\.platform==="linux")(?!\|\|)/;
+// Capture the object name (e.g. "vs", "Mr") since it changes with each minified build.
+const orig = /(\w+=(\w+)\.platform==="linux")(?!\|\|)/;
 if (!orig.test(s)) { console.error('PATCH FAILED: target string not found in server-main.js'); process.exit(1); }
-s = s.replace(orig, '$1||vs.platform==="freebsd"');
+s = s.replace(orig, '$1||$2.platform==="freebsd"');
 fs.writeFileSync(f, s);
 console.log('Patched server-main.js: FreeBSD treated as Linux for extension platform detection');
