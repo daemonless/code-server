@@ -1,13 +1,13 @@
 {
+  "generated": "2026-04-02T23:47:06Z",
   "image": "code-server",
-  "generated": "2026-04-02T21:30:55Z",
   "tags": {
     "latest": {
-      "arch": "amd64",
       "app_version": "4.113.0",
-      "source": "upstream",
-      "generated": "2026-04-02T21:29:39Z",
+      "arch": "amd64",
+      "generated": "2026-04-02T23:45:53Z",
       "packages": {
+        "dotnet": [],
         "freebsd": [
           {
             "name": "FreeBSD-audit-lib",
@@ -318,7 +318,6 @@
             "version": "1.5.7_1"
           }
         ],
-        "dotnet": [],
         "go": [],
         "java": [],
         "node": [
@@ -2129,9 +2128,10 @@
         "ruby": [],
         "rust": []
       },
+      "source": "upstream",
       "summary": {
-        "freebsd": 77,
         "dotnet": 0,
+        "freebsd": 77,
         "go": 0,
         "java": 0,
         "node": 449,
