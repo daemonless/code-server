@@ -9,3 +9,5 @@ cit:
   mode: screenshot 
   port: 8080
   health: /healthz
+  screenshot_wait: 30
+  ssim_threshold: 0.80
