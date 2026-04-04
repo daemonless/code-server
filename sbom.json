@@ -1,11 +1,11 @@
 {
-  "generated": "2026-04-02T23:47:06Z",
+  "generated": "2026-04-04T07:19:16Z",
   "image": "code-server",
   "tags": {
     "latest": {
-      "app_version": "4.113.0",
+      "app_version": "4.113.1",
       "arch": "amd64",
-      "generated": "2026-04-02T23:45:53Z",
+      "generated": "2026-04-04T07:18:00Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
