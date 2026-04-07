@@ -1,11 +1,11 @@
 {
-  "generated": "2026-04-04T14:18:23Z",
+  "generated": "2026-04-07T07:48:06Z",
   "image": "code-server",
   "tags": {
     "latest": {
-      "app_version": "4.114.0",
+      "app_version": "4.114.1",
       "arch": "amd64",
-      "generated": "2026-04-04T14:17:09Z",
+      "generated": "2026-04-07T07:46:50Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -296,10 +296,6 @@
           {
             "name": "s6",
             "version": "2.13.2.0"
-          },
-          {
-            "name": "s6-rc",
-            "version": "0.5.6.0"
           },
           {
             "name": "simdjson",
@@ -2131,7 +2127,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 77,
+        "freebsd": 76,
         "go": 0,
         "java": 0,
         "node": 449,
@@ -2139,7 +2135,7 @@
         "python": 1,
         "ruby": 0,
         "rust": 0,
-        "total": 527
+        "total": 526
       }
     }
   }
