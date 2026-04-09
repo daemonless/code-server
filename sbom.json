@@ -1,11 +1,11 @@
 {
-  "generated": "2026-04-07T07:48:06Z",
+  "generated": "2026-04-09T07:19:43Z",
   "image": "code-server",
   "tags": {
     "latest": {
-      "app_version": "4.114.1",
+      "app_version": "4.115.0",
       "arch": "amd64",
-      "generated": "2026-04-07T07:46:50Z",
+      "generated": "2026-04-09T07:18:25Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -163,11 +163,11 @@
           },
           {
             "name": "corepack",
-            "version": "0.34.5"
+            "version": "0.34.6"
           },
           {
             "name": "doas",
-            "version": "6.3p13"
+            "version": "6.4"
           },
           {
             "name": "execline",
@@ -183,7 +183,7 @@
           },
           {
             "name": "gettext-runtime",
-            "version": "0.26"
+            "version": "1.0"
           },
           {
             "name": "gmake",
@@ -206,6 +206,10 @@
             "version": "1.8.1"
           },
           {
+            "name": "libada",
+            "version": "3.4.3"
+          },
+          {
             "name": "libedit",
             "version": "3.1.20251016_1,1"
           },
@@ -223,19 +227,19 @@
           },
           {
             "name": "libnghttp3",
-            "version": "1.14.0"
+            "version": "1.15.0"
           },
           {
             "name": "libngtcp2",
-            "version": "1.19.0"
+            "version": "1.21.0"
           },
           {
             "name": "libuv",
-            "version": "1.51.0"
+            "version": "1.52.0"
           },
           {
             "name": "llhttp",
-            "version": "9.3.0"
+            "version": "9.3.1"
           },
           {
             "name": "llvm",
@@ -251,7 +255,7 @@
           },
           {
             "name": "mpc",
-            "version": "1.3.1_1"
+            "version": "1.4.0"
           },
           {
             "name": "mpdecimal",
@@ -263,11 +267,11 @@
           },
           {
             "name": "node22",
-            "version": "22.22.0"
+            "version": "22.22.1_2"
           },
           {
             "name": "npm-node22",
-            "version": "11.7.0"
+            "version": "11.11.0"
           },
           {
             "name": "oniguruma",
@@ -279,7 +283,7 @@
           },
           {
             "name": "pkg",
-            "version": "2.5.1"
+            "version": "2.6.2_1"
           },
           {
             "name": "python3",
@@ -287,7 +291,7 @@
           },
           {
             "name": "python311",
-            "version": "3.11.15"
+            "version": "3.11.15_1"
           },
           {
             "name": "readline",
@@ -299,7 +303,7 @@
           },
           {
             "name": "simdjson",
-            "version": "4.2.4"
+            "version": "4.5.0"
           },
           {
             "name": "skalibs",
@@ -310,6 +314,10 @@
             "version": "3.50.4_2,1"
           },
           {
+            "name": "uvwasi",
+            "version": "0.0.23"
+          },
+          {
             "name": "zstd",
             "version": "1.5.7_1"
           }
@@ -317,6 +325,10 @@
         "go": [],
         "java": [],
         "node": [
+          {
+            "name": "1to2",
+            "version": "1.0.0"
+          },
           {
             "name": "@anthropic-ai/sandbox-runtime",
             "version": "0.0.42"
@@ -338,6 +350,10 @@
             "version": "1.0.0"
           },
           {
+            "name": "@gar/promise-retry",
+            "version": "1.0.2"
+          },
+          {
             "name": "@github/copilot",
             "version": "1.0.11"
           },
@@ -348,14 +364,6 @@
           {
             "name": "@img/sharp-wasm32",
             "version": "0.34.5"
-          },
-          {
-            "name": "@isaacs/balanced-match",
-            "version": "4.0.1"
-          },
-          {
-            "name": "@isaacs/brace-expansion",
-            "version": "5.0.0"
           },
           {
             "name": "@isaacs/fs-minipass",
@@ -391,11 +399,11 @@
           },
           {
             "name": "@npmcli/arborist",
-            "version": "9.1.9"
+            "version": "9.4.0"
           },
           {
             "name": "@npmcli/config",
-            "version": "10.4.5"
+            "version": "10.7.1"
           },
           {
             "name": "@npmcli/fs",
@@ -403,7 +411,7 @@
           },
           {
             "name": "@npmcli/git",
-            "version": "7.0.1"
+            "version": "7.0.2"
           },
           {
             "name": "@npmcli/installed-package-contents",
@@ -427,7 +435,7 @@
           },
           {
             "name": "@npmcli/package-json",
-            "version": "7.0.4"
+            "version": "7.0.5"
           },
           {
             "name": "@npmcli/promise-spawn",
@@ -467,7 +475,7 @@
           },
           {
             "name": "@sigstore/core",
-            "version": "3.0.0"
+            "version": "3.1.0"
           },
           {
             "name": "@sigstore/protobuf-specs",
@@ -475,15 +483,15 @@
           },
           {
             "name": "@sigstore/sign",
-            "version": "4.0.1"
+            "version": "4.1.0"
           },
           {
             "name": "@sigstore/tuf",
-            "version": "4.0.0"
+            "version": "4.0.1"
           },
           {
             "name": "@sigstore/verify",
-            "version": "3.0.0"
+            "version": "3.1.0"
           },
           {
             "name": "@teddyzhu/clipboard",
@@ -527,7 +535,7 @@
           },
           {
             "name": "@tufjs/models",
-            "version": "4.0.0"
+            "version": "4.1.0"
           },
           {
             "name": "@types/lodash",
@@ -562,6 +570,10 @@
             "version": "0.15.8"
           },
           {
+            "name": "@vscode/sqlite3",
+            "version": "5.1.12-vscode"
+          },
+          {
             "name": "@vscode/tree-sitter-wasm",
             "version": "0.3.0"
           },
@@ -579,43 +591,43 @@
           },
           {
             "name": "@xterm/addon-clipboard",
-            "version": "0.3.0-beta.191"
+            "version": "0.3.0-beta.196"
           },
           {
             "name": "@xterm/addon-image",
-            "version": "0.10.0-beta.191"
+            "version": "0.10.0-beta.196"
           },
           {
             "name": "@xterm/addon-ligatures",
-            "version": "0.11.0-beta.191"
+            "version": "0.11.0-beta.196"
           },
           {
             "name": "@xterm/addon-progress",
-            "version": "0.3.0-beta.191"
+            "version": "0.3.0-beta.196"
           },
           {
             "name": "@xterm/addon-search",
-            "version": "0.17.0-beta.191"
+            "version": "0.17.0-beta.196"
           },
           {
             "name": "@xterm/addon-serialize",
-            "version": "0.15.0-beta.191"
+            "version": "0.15.0-beta.196"
           },
           {
             "name": "@xterm/addon-unicode11",
-            "version": "0.10.0-beta.191"
+            "version": "0.10.0-beta.196"
           },
           {
             "name": "@xterm/addon-webgl",
-            "version": "0.20.0-beta.190"
+            "version": "0.20.0-beta.195"
           },
           {
             "name": "@xterm/headless",
-            "version": "6.1.0-beta.191"
+            "version": "6.1.0-beta.196"
           },
           {
             "name": "@xterm/xterm",
-            "version": "6.1.0-beta.191"
+            "version": "6.1.0-beta.196"
           },
           {
             "name": "abbrev",
@@ -628,10 +640,6 @@
           {
             "name": "agent-base",
             "version": "7.1.1"
-          },
-          {
-            "name": "ansi-regex",
-            "version": "5.0.1"
           },
           {
             "name": "aproba",
@@ -650,12 +658,16 @@
             "version": "2.0.1"
           },
           {
+            "name": "asn1",
+            "version": "0.2.6"
+          },
+          {
             "name": "ast-types",
             "version": "0.13.4"
           },
           {
             "name": "balanced-match",
-            "version": "1.0.2"
+            "version": "4.0.4"
           },
           {
             "name": "basic-ftp",
@@ -664,6 +676,10 @@
           {
             "name": "bat",
             "version": "10.0.0"
+          },
+          {
+            "name": "bcrypt-pbkdf",
+            "version": "1.0.2"
           },
           {
             "name": "bin-links",
@@ -683,7 +699,7 @@
           },
           {
             "name": "brace-expansion",
-            "version": "2.0.2"
+            "version": "5.0.3"
           },
           {
             "name": "buffer-alloc",
@@ -735,15 +751,11 @@
           },
           {
             "name": "ci-info",
-            "version": "4.3.1"
+            "version": "4.4.0"
           },
           {
             "name": "cidr-regex",
-            "version": "5.0.1"
-          },
-          {
-            "name": "cli-columns",
-            "version": "4.0.0"
+            "version": "5.0.3"
           },
           {
             "name": "clojure",
@@ -755,7 +767,7 @@
           },
           {
             "name": "code-server",
-            "version": "1.114.0"
+            "version": "1.115.0"
           },
           {
             "name": "coffeescript",
@@ -767,7 +779,7 @@
           },
           {
             "name": "common-ancestor-path",
-            "version": "1.0.1"
+            "version": "2.0.0"
           },
           {
             "name": "compressible",
@@ -803,7 +815,7 @@
           },
           {
             "name": "corepack",
-            "version": "0.34.5"
+            "version": "0.34.6"
           },
           {
             "name": "cpp",
@@ -894,16 +906,8 @@
             "version": "10.0.0"
           },
           {
-            "name": "emoji-regex",
-            "version": "8.0.0"
-          },
-          {
             "name": "encodeurl",
             "version": "2.0.0"
-          },
-          {
-            "name": "encoding",
-            "version": "0.1.13"
           },
           {
             "name": "env-paths",
@@ -1047,7 +1051,7 @@
           },
           {
             "name": "glob",
-            "version": "13.0.0"
+            "version": "13.0.6"
           },
           {
             "name": "go",
@@ -1131,7 +1135,7 @@
           },
           {
             "name": "iconv-lite",
-            "version": "0.6.3"
+            "version": "0.7.2"
           },
           {
             "name": "ignore-walk",
@@ -1151,15 +1155,11 @@
           },
           {
             "name": "init-package-json",
-            "version": "8.2.4"
+            "version": "8.2.5"
           },
           {
             "name": "ip-address",
-            "version": "10.0.1"
-          },
-          {
-            "name": "ip-regex",
-            "version": "5.0.0"
+            "version": "10.1.0"
           },
           {
             "name": "ipaddr.js",
@@ -1175,15 +1175,11 @@
           },
           {
             "name": "is-cidr",
-            "version": "6.0.1"
+            "version": "6.0.3"
           },
           {
             "name": "is-extglob",
             "version": "2.1.1"
-          },
-          {
-            "name": "is-fullwidth-code-point",
-            "version": "3.0.0"
           },
           {
             "name": "is-glob",
@@ -1291,15 +1287,15 @@
           },
           {
             "name": "libnpmdiff",
-            "version": "8.0.12"
+            "version": "8.1.3"
           },
           {
             "name": "libnpmexec",
-            "version": "10.1.11"
+            "version": "10.2.3"
           },
           {
             "name": "libnpmfund",
-            "version": "7.0.12"
+            "version": "7.0.17"
           },
           {
             "name": "libnpmorg",
@@ -1307,7 +1303,7 @@
           },
           {
             "name": "libnpmpack",
-            "version": "9.0.12"
+            "version": "9.1.3"
           },
           {
             "name": "libnpmpublish",
@@ -1331,7 +1327,7 @@
           },
           {
             "name": "lodash-es",
-            "version": "4.17.23"
+            "version": "4.18.1"
           },
           {
             "name": "log",
@@ -1339,7 +1335,7 @@
           },
           {
             "name": "lru-cache",
-            "version": "11.2.2"
+            "version": "11.2.6"
           },
           {
             "name": "lua",
@@ -1351,7 +1347,7 @@
           },
           {
             "name": "make-fetch-happen",
-            "version": "15.0.3"
+            "version": "15.0.4"
           },
           {
             "name": "markdown",
@@ -1407,7 +1403,7 @@
           },
           {
             "name": "minimatch",
-            "version": "10.1.1"
+            "version": "10.2.2"
           },
           {
             "name": "minimist",
@@ -1423,7 +1419,7 @@
           },
           {
             "name": "minipass-fetch",
-            "version": "5.0.0"
+            "version": "5.0.2"
           },
           {
             "name": "minipass-flush",
@@ -1435,7 +1431,7 @@
           },
           {
             "name": "minipass-sized",
-            "version": "1.0.3"
+            "version": "2.0.0"
           },
           {
             "name": "minizlib",
@@ -1454,6 +1450,10 @@
             "version": "3.0.0"
           },
           {
+            "name": "nan",
+            "version": "2.26.2"
+          },
+          {
             "name": "negotiator",
             "version": "0.6.4"
           },
@@ -1467,7 +1467,7 @@
           },
           {
             "name": "node-gyp",
-            "version": "12.1.0"
+            "version": "12.2.0"
           },
           {
             "name": "node-gyp-build",
@@ -1507,7 +1507,7 @@
           },
           {
             "name": "npm-packlist",
-            "version": "10.0.3"
+            "version": "10.0.4"
           },
           {
             "name": "npm-pick-manifest",
@@ -1567,7 +1567,7 @@
           },
           {
             "name": "pacote",
-            "version": "21.0.4"
+            "version": "21.4.0"
           },
           {
             "name": "parse-conflict-json",
@@ -1583,7 +1583,7 @@
           },
           {
             "name": "path-scurry",
-            "version": "2.0.0"
+            "version": "2.0.2"
           },
           {
             "name": "path-to-regexp",
@@ -1615,7 +1615,7 @@
           },
           {
             "name": "postcss-selector-parser",
-            "version": "7.1.0"
+            "version": "7.1.1"
           },
           {
             "name": "powershell",
@@ -1623,7 +1623,7 @@
           },
           {
             "name": "proc-log",
-            "version": "5.0.0"
+            "version": "6.1.0"
           },
           {
             "name": "proggy",
@@ -1755,7 +1755,7 @@
           },
           {
             "name": "semver",
-            "version": "7.7.3"
+            "version": "7.7.4"
           },
           {
             "name": "send",
@@ -1811,7 +1811,7 @@
           },
           {
             "name": "sigstore",
-            "version": "4.0.0"
+            "version": "4.1.0"
           },
           {
             "name": "simple-browser",
@@ -1834,20 +1834,16 @@
             "version": "0.6.1"
           },
           {
-            "name": "spdx-correct",
-            "version": "3.2.0"
-          },
-          {
             "name": "spdx-exceptions",
             "version": "2.5.0"
           },
           {
             "name": "spdx-expression-parse",
-            "version": "3.0.1"
+            "version": "4.0.0"
           },
           {
             "name": "spdx-license-ids",
-            "version": "3.0.22"
+            "version": "3.0.23"
           },
           {
             "name": "sprintf-js",
@@ -1858,20 +1854,16 @@
             "version": "10.0.0"
           },
           {
+            "name": "ssh2",
+            "version": "1.17.0"
+          },
+          {
             "name": "ssri",
-            "version": "13.0.0"
+            "version": "13.0.1"
           },
           {
             "name": "statuses",
             "version": "2.0.2"
-          },
-          {
-            "name": "string-width",
-            "version": "4.2.3"
-          },
-          {
-            "name": "strip-ansi",
-            "version": "6.0.1"
           },
           {
             "name": "supports-color",
@@ -1883,7 +1875,7 @@
           },
           {
             "name": "tar",
-            "version": "7.5.2"
+            "version": "7.5.13"
           },
           {
             "name": "tas-client",
@@ -1963,11 +1955,15 @@
           },
           {
             "name": "tuf-js",
-            "version": "4.0.0"
+            "version": "4.1.0"
           },
           {
             "name": "tunnel-forwarding",
             "version": "10.0.0"
+          },
+          {
+            "name": "tweetnacl",
+            "version": "0.14.5"
           },
           {
             "name": "type-is",
@@ -2010,12 +2006,8 @@
             "version": "9.0.1"
           },
           {
-            "name": "validate-npm-package-license",
-            "version": "3.0.4"
-          },
-          {
             "name": "validate-npm-package-name",
-            "version": "7.0.0"
+            "version": "7.0.2"
           },
           {
             "name": "vary",
@@ -2127,15 +2119,15 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 76,
+        "freebsd": 78,
         "go": 0,
         "java": 0,
-        "node": 449,
+        "node": 445,
         "php": 0,
         "python": 1,
         "ruby": 0,
         "rust": 0,
-        "total": 526
+        "total": 524
       }
     }
   }
