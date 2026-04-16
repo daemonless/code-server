@@ -1,11 +1,11 @@
 {
-  "generated": "2026-04-09T07:19:43Z",
+  "generated": "2026-04-16T21:38:17Z",
   "image": "code-server",
   "tags": {
     "latest": {
-      "app_version": "4.115.0",
+      "app_version": "4.116.0",
       "arch": "amd64",
-      "generated": "2026-04-09T07:18:25Z",
+      "generated": "2026-04-16T21:37:01Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -171,7 +171,7 @@
           },
           {
             "name": "execline",
-            "version": "2.9.7.0"
+            "version": "2.9.8.1"
           },
           {
             "name": "gcc",
@@ -207,7 +207,7 @@
           },
           {
             "name": "libada",
-            "version": "3.4.3"
+            "version": "3.4.4"
           },
           {
             "name": "libedit",
@@ -267,7 +267,7 @@
           },
           {
             "name": "node22",
-            "version": "22.22.1_2"
+            "version": "22.22.2"
           },
           {
             "name": "npm-node22",
@@ -291,7 +291,7 @@
           },
           {
             "name": "python311",
-            "version": "3.11.15_1"
+            "version": "3.11.15_2"
           },
           {
             "name": "readline",
@@ -299,7 +299,7 @@
           },
           {
             "name": "s6",
-            "version": "2.13.2.0"
+            "version": "2.14.0.1"
           },
           {
             "name": "simdjson",
@@ -307,7 +307,7 @@
           },
           {
             "name": "skalibs",
-            "version": "2.14.4.0"
+            "version": "2.14.5.1"
           },
           {
             "name": "sqlite3",
@@ -343,7 +343,7 @@
           },
           {
             "name": "@emnapi/runtime",
-            "version": "1.9.1"
+            "version": "1.9.2"
           },
           {
             "name": "@epic-web/invariant",
@@ -355,11 +355,11 @@
           },
           {
             "name": "@github/copilot",
-            "version": "1.0.11"
+            "version": "1.0.24"
           },
           {
             "name": "@github/copilot-sdk",
-            "version": "0.2.0"
+            "version": "0.2.2"
           },
           {
             "name": "@img/sharp-wasm32",
@@ -559,7 +559,7 @@
           },
           {
             "name": "@vscode/proxy-agent",
-            "version": "0.40.0"
+            "version": "0.41.0"
           },
           {
             "name": "@vscode/ripgrep",
@@ -575,7 +575,7 @@
           },
           {
             "name": "@vscode/tree-sitter-wasm",
-            "version": "0.3.0"
+            "version": "0.3.1"
           },
           {
             "name": "@vscode/vscode-languagedetection",
@@ -591,43 +591,43 @@
           },
           {
             "name": "@xterm/addon-clipboard",
-            "version": "0.3.0-beta.196"
+            "version": "0.3.0-beta.197"
           },
           {
             "name": "@xterm/addon-image",
-            "version": "0.10.0-beta.196"
+            "version": "0.10.0-beta.197"
           },
           {
             "name": "@xterm/addon-ligatures",
-            "version": "0.11.0-beta.196"
+            "version": "0.11.0-beta.197"
           },
           {
             "name": "@xterm/addon-progress",
-            "version": "0.3.0-beta.196"
+            "version": "0.3.0-beta.197"
           },
           {
             "name": "@xterm/addon-search",
-            "version": "0.17.0-beta.196"
+            "version": "0.17.0-beta.197"
           },
           {
             "name": "@xterm/addon-serialize",
-            "version": "0.15.0-beta.196"
+            "version": "0.15.0-beta.197"
           },
           {
             "name": "@xterm/addon-unicode11",
-            "version": "0.10.0-beta.196"
+            "version": "0.10.0-beta.197"
           },
           {
             "name": "@xterm/addon-webgl",
-            "version": "0.20.0-beta.195"
+            "version": "0.20.0-beta.196"
           },
           {
             "name": "@xterm/headless",
-            "version": "6.1.0-beta.196"
+            "version": "6.1.0-beta.197"
           },
           {
             "name": "@xterm/xterm",
-            "version": "6.1.0-beta.196"
+            "version": "6.1.0-beta.197"
           },
           {
             "name": "abbrev",
@@ -671,7 +671,7 @@
           },
           {
             "name": "basic-ftp",
-            "version": "5.2.0"
+            "version": "5.2.1"
           },
           {
             "name": "bat",
@@ -767,7 +767,7 @@
           },
           {
             "name": "code-server",
-            "version": "1.115.0"
+            "version": "1.116.0"
           },
           {
             "name": "coffeescript",
@@ -812,6 +812,10 @@
           {
             "name": "cookie-signature",
             "version": "1.0.6"
+          },
+          {
+            "name": "copilot-chat",
+            "version": "0.44.0"
           },
           {
             "name": "corepack",
@@ -1587,7 +1591,7 @@
           },
           {
             "name": "path-to-regexp",
-            "version": "8.3.0"
+            "version": "8.4.2"
           },
           {
             "name": "pem",
@@ -2122,12 +2126,12 @@
         "freebsd": 78,
         "go": 0,
         "java": 0,
-        "node": 445,
+        "node": 446,
         "php": 0,
         "python": 1,
         "ruby": 0,
         "rust": 0,
-        "total": 524
+        "total": 525
       }
     }
   }
