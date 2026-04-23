@@ -1,11 +1,11 @@
 {
-  "generated": "2026-04-16T21:38:17Z",
+  "generated": "2026-04-23T23:56:45Z",
   "image": "code-server",
   "tags": {
     "latest": {
-      "app_version": "4.116.0",
+      "app_version": "4.117.0",
       "arch": "amd64",
-      "generated": "2026-04-16T21:37:01Z",
+      "generated": "2026-04-23T23:55:29Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -671,7 +671,7 @@
           },
           {
             "name": "basic-ftp",
-            "version": "5.2.1"
+            "version": "5.3.0"
           },
           {
             "name": "bat",
@@ -767,7 +767,7 @@
           },
           {
             "name": "code-server",
-            "version": "1.116.0"
+            "version": "1.117.0"
           },
           {
             "name": "coffeescript",
@@ -815,7 +815,7 @@
           },
           {
             "name": "copilot-chat",
-            "version": "0.44.0"
+            "version": "0.45.0"
           },
           {
             "name": "corepack",
@@ -999,7 +999,7 @@
           },
           {
             "name": "follow-redirects",
-            "version": "1.15.11"
+            "version": "1.16.0"
           },
           {
             "name": "forwarded",
@@ -1215,7 +1215,7 @@
           },
           {
             "name": "js-debug",
-            "version": "1.112.0"
+            "version": "1.117.0"
           },
           {
             "name": "js-debug-companion",
