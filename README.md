@@ -23,9 +23,11 @@ VS Code in the browser — run a full development environment on your FreeBSD se
 | :--- | :--- | :--- |
 | `latest` | **Upstream Binary**. Built from official release. | Most users. Matches Linux Docker behavior. |
 
+
 ## Prerequisites
 
 Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.
+
 
 ## Deployment
 
@@ -94,6 +96,7 @@ OPTION from=ghcr.io/daemonless/code-server:${tag}
 ### Podman CLI
 
 ```bash
+
 podman run -d --name code-server \
   -p 8080:8080 \
   -e PUID=1000 \
@@ -122,7 +125,6 @@ podman run -d --name code-server \
       - "/path/to/containers/code-server:/config"
 ```
 
-Access at: `http://localhost:8080`
 
 ## Parameters
 
