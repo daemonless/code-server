@@ -1,11 +1,11 @@
 {
-  "generated": "2026-04-23T23:56:45Z",
+  "generated": "2026-05-06T23:16:08Z",
   "image": "code-server",
   "tags": {
     "latest": {
       "app_version": "4.117.0",
       "arch": "amd64",
-      "generated": "2026-04-23T23:55:29Z",
+      "generated": "2026-05-06T23:14:43Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -95,11 +95,11 @@
           },
           {
             "name": "FreeBSD-openssl",
-            "version": "15.0"
+            "version": "15.0p2"
           },
           {
             "name": "FreeBSD-openssl-lib",
-            "version": "15.0"
+            "version": "15.0p2"
           },
           {
             "name": "FreeBSD-pkg-bootstrap",
@@ -111,7 +111,7 @@
           },
           {
             "name": "FreeBSD-runtime",
-            "version": "15.0"
+            "version": "15.0p8"
           },
           {
             "name": "FreeBSD-tcpd",
@@ -143,7 +143,7 @@
           },
           {
             "name": "FreeBSD-zoneinfo",
-            "version": "15.0"
+            "version": "15.0p7"
           },
           {
             "name": "binutils",
@@ -223,7 +223,7 @@
           },
           {
             "name": "libnghttp2",
-            "version": "1.68.0"
+            "version": "1.68.1"
           },
           {
             "name": "libnghttp3",
@@ -231,7 +231,7 @@
           },
           {
             "name": "libngtcp2",
-            "version": "1.21.0"
+            "version": "1.22.1"
           },
           {
             "name": "libuv",
