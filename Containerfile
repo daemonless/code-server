@@ -59,7 +59,8 @@ RUN patch -p1 < /tmp/patches/node-pty.patch && \
     node /tmp/patches/deviceid.js && \
     node /tmp/patches/platform.js
 
-RUN npm rebuild node-pty @vscode/spdlog @parcel/watcher @vscode/native-watchdog
+RUN npm install --no-audit --no-fund @vscode/fs-copyfile && \
+    npm rebuild node-pty @vscode/spdlog @parcel/watcher @vscode/native-watchdog
 
 # Install code-server root deps + run postinstall (compiles argon2, node-pty etc.)
 WORKDIR /usr/local/lib/node_modules/code-server
