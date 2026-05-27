@@ -59,7 +59,8 @@ RUN patch -p1 < /tmp/patches/node-pty.patch && \
     node /tmp/patches/deviceid.js && \
     node /tmp/patches/platform.js
 
-RUN npm rebuild node-pty @vscode/spdlog @parcel/watcher @vscode/native-watchdog
+RUN npm install --no-audit --no-fund @vscode/fs-copyfile && \
+    npm rebuild node-pty @vscode/spdlog @parcel/watcher @vscode/native-watchdog
 
 # Install code-server root deps + run postinstall (compiles argon2, node-pty etc.)
 WORKDIR /usr/local/lib/node_modules/code-server
@@ -78,7 +79,7 @@ ARG FREEBSD_ARCH=amd64
 ARG APP_VERSION=""
 ARG UPSTREAM_URL="https://registry.npmjs.org/code-server/latest"
 ARG UPSTREAM_JQ=".version"
-ARG PACKAGES="node22 npm-node22 ca_root_nss libinotify doas python3 gmake gcc llvm FreeBSD-clang FreeBSD-toolchain"
+ARG PACKAGES="node22 npm-node22 ca_root_nss libinotify doas python3 gmake gcc llvm FreeBSD-clang FreeBSD-toolchain git FreeBSD-ssh ripgrep"
 
 LABEL org.opencontainers.image.title="code-server" \
       org.opencontainers.image.description="code-server on FreeBSD." \
@@ -109,6 +110,8 @@ RUN pkg update && \
 COPY --from=builder /app/version /app/version
 COPY --from=builder /usr/local/lib/node_modules /usr/local/lib/node_modules
 RUN ln -sf /usr/local/lib/node_modules/code-server/out/node/entry.js /usr/local/bin/code-server && \
+    mkdir -p /usr/local/lib/node_modules/code-server/lib/vscode/node_modules/@vscode/ripgrep/bin && \
+    ln -sf /usr/local/bin/rg /usr/local/lib/node_modules/code-server/lib/vscode/node_modules/@vscode/ripgrep/bin/rg && \
     chmod -R o+rX /usr/local/lib/node_modules
 
 # Copy root filesystem
