@@ -9,18 +9,39 @@ x-daemonless:
     !!! warning "Work in Progress"
         This image is functional but may change significantly in a future release.
 
-    Common dev tools (gcc, clang, llvm, python, gmake) are baked into the image for now.
+    Common dev tools (gcc, clang, llvm, python, gmake, git, ssh) are baked into the image for now.
 
-    !!! warning "No sudo / su / doas in Terminal"
-        Podman strips the setuid bit from binaries at runtime, so `sudo`, `su`, and `doas` will not work inside the code-server terminal. To run commands as root, use `podman exec` from the host.
+    ## Running commands as `root` in Terminal
+    Podman strips the setuid bit from binaries at runtime, so `sudo`, `su`, and `doas` will not work inside the code-server terminal.  
+
+    To allow running commands as the `root` user, we can use FreeBSD's MAC framework and the `mdo` command which does not depend on the setuid bit being set.
+    The `mac_do` kernel module has to be loaded on the host which runs Podman before the container is started.  
+    You can load the module at runtime by running
+    ```sh
+    kldload mac_do
+    ```
+    To load the module automatically during boot you can add it to `rc.conf` with
+    ```sh
+    sysrc kld_list+=mac_do
+    ```
+
+    If the `mac_do` module is loaded when the container starts, it will automatically install a rule that allows the `bsd` user to execute commands as root by running `mdo <command>`.
+
+    To disable the installation of the `mac_do` rule that allows the privilege elevation, you can set the `DISABLE_MDO` environment variable to `true` or `yes`:
+    ```yaml
+    services:
+      code-server:
+        environment:
+          - DISABLE_MDO=true
+    ```    
 
     ## Installing Packages
+    If the `mac_do` module is loaded on the host you can install packages in the terminal by running
+    ```sh
+    mdo pkg install...
+    ```
 
-    This is a known limitation of this WIP image and will likely improve in a future release.
-
-    Due to FreeBSD jail restrictions, `pkg install` cannot be run from the code-server terminal directly.
-    Install additional packages from the host using `podman exec`:
-
+    If the module is not loaded or if `DISABLE_MDO` is set to `true` you have to install additional packages from the host using `podman exec`:
     ```sh
     # Podman
     doas podman exec -it -u root code-server pkg install rust cargo
@@ -47,6 +68,7 @@ x-daemonless:
       TZ: "Timezone for the container"
       PASSWORD: "Password for web UI (leave unset to disable auth)"
       DEFAULT_WORKSPACE: "Default folder opened in the editor (default: /config/workspace)"
+      DISABLE_MDO: "Do not use FreeBSD's mac_do facility to allow executing commands as root from the terminal (optional)"
     volumes:
       /config: "Configuration directory"
     ports:

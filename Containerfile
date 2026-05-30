@@ -118,7 +118,7 @@ RUN ln -sf /usr/local/lib/node_modules/code-server/out/node/entry.js /usr/local/
 COPY root/ /
 
 # Set permissions
-RUN chmod +x /etc/services.d/code-server/run /healthz
+RUN chmod +x /etc/services.d/code-server/run /etc/cont-init.d/* /healthz
 
 ENV HOME="/config"
 
