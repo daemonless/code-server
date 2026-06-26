@@ -18,13 +18,11 @@ VS Code in the browser — run a full development environment on your FreeBSD se
 | **Website** | [https://coder.com/docs/code-server](https://coder.com/docs/code-server) |
 
 ## Version Tags
-
 | Tag | Description | Best For |
 | :--- | :--- | :--- |
 | `latest` | **Upstream Binary**. Built from official release. | Most users. Matches Linux Docker behavior. |
 
 ## Prerequisites
-
 Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.
 
 ## Deployment
@@ -34,33 +32,42 @@ Before deploying, ensure your host environment is ready. See the [Quick Start Gu
 ```yaml
 services:
   code-server:
-    image: ghcr.io/daemonless/code-server:latest
+    image: "ghcr.io/daemonless/code-server:latest"
     container_name: code-server
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=UTC
+      - PUID=1000  # User ID for the application process
+      - PGID=1000  # Group ID for the application process
+      - TZ=UTC  # Timezone for the container
+      - PASSWORD=<PASSWORD>  # Password for web UI (leave unset to disable auth)
+      - DEFAULT_WORKSPACE=  # Default folder opened in the editor (default: /config/workspace)
+      - DISABLE_MDO=  # Do not use FreeBSD's mac_do facility to allow executing commands as root from the terminal (optional)
     volumes:
       - "/path/to/containers/code-server:/config"
     ports:
-      - 8080:8080
+      - "8080:8080"
     restart: unless-stopped
 ```
 
 ### AppJail Director
-
 **.env**:
 
 ```
+# .env
+
 DIRECTOR_PROJECT=code-server
 PUID=1000
 PGID=1000
 TZ=UTC
+PASSWORD=<PASSWORD>
+DEFAULT_WORKSPACE=
+DISABLE_MDO=
 ```
 
 **appjail-director.yml**:
 
 ```yaml
+# appjail-director.yml
+
 options:
   - virtualnet: ':<random> default'
   - nat:
@@ -69,12 +76,16 @@ services:
     name: code_server
     options:
       - container: 'boot args:--pull'
+      - expose: '8080:8080 proto:tcp' \
     oci:
       user: root
       environment:
         - PUID: !ENV '${PUID}'
         - PGID: !ENV '${PGID}'
         - TZ: !ENV '${TZ}'
+        - PASSWORD: !ENV '${PASSWORD}'
+        - DEFAULT_WORKSPACE: !ENV '${DEFAULT_WORKSPACE}'
+        - DISABLE_MDO: !ENV '${DISABLE_MDO}'
     volumes:
       - code-server: /config
 volumes:
@@ -85,11 +96,14 @@ volumes:
 **Makejail**:
 
 ```
+# Makejail
+
 ARG tag=latest
 
 OPTION overwrite=force
 OPTION from=ghcr.io/daemonless/code-server:${tag}
 ```
+**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
 
 ### Podman CLI
 
@@ -99,9 +113,32 @@ podman run -d --name code-server \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=UTC \
+  -e PASSWORD=<PASSWORD> \
+  -e DEFAULT_WORKSPACE= \
+  -e DISABLE_MDO= \
   -v /path/to/containers/code-server:/config \
   ghcr.io/daemonless/code-server:latest
 ```
+
+### AppJail
+
+```bash
+appjail oci run -Pd \
+  -o overwrite=force \
+  -o container="args:--pull" \
+  -o virtualnet=":<random> default" \
+  -o nat \
+  -o expose="8080:8080 proto:tcp" \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=UTC \
+  -e PASSWORD=<PASSWORD> \
+  -e DEFAULT_WORKSPACE= \
+  -e DISABLE_MDO= \
+  -o fstab="/path/to/containers/code-server /config <pseudofs>" \
+  ghcr.io/daemonless/code-server:latest code-server
+```
+**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
 
 ### Ansible
 
@@ -109,18 +146,23 @@ podman run -d --name code-server \
 - name: Deploy code-server
   containers.podman.podman_container:
     name: code-server
-    image: ghcr.io/daemonless/code-server:latest
+    image: "ghcr.io/daemonless/code-server:latest"
     state: started
     restart_policy: always
     env:
       PUID: "1000"
       PGID: "1000"
       TZ: "UTC"
+      PASSWORD: "<PASSWORD>"
+      DEFAULT_WORKSPACE: ""
+      DISABLE_MDO: ""
     ports:
       - "8080:8080"
     volumes:
       - "/path/to/containers/code-server:/config"
 ```
+
+Access at: `http://localhost:8080`
 
 ## Parameters
 
@@ -131,6 +173,9 @@ podman run -d --name code-server \
 | `PUID` | `1000` | User ID for the application process |
 | `PGID` | `1000` | Group ID for the application process |
 | `TZ` | `UTC` | Timezone for the container |
+| `PASSWORD` | `<PASSWORD>` | Password for web UI (leave unset to disable auth) |
+| `DEFAULT_WORKSPACE` | `` | Default folder opened in the editor (default: /config/workspace) |
+| `DISABLE_MDO` | `` | Do not use FreeBSD's mac_do facility to allow executing commands as root from the terminal (optional) |
 
 ### Volumes
 
@@ -194,7 +239,7 @@ doas appjail cmd jexec code_server pkg install rust cargo
 
 **Architectures:** amd64
 **User:** `bsd` (UID/GID via PUID/PGID, defaults to 1000:1000)
-**Base:** FreeBSD 15.0
+**Base:** FreeBSD 15.1
 
 ---
 
