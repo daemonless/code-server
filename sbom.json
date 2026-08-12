@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-01T20:13:56Z",
+  "generated": "2026-08-12T09:34:48Z",
   "image": "code-server",
   "tags": {
     "latest": {
       "app_version": "4.117.0",
       "arch": "amd64",
-      "generated": "2026-08-01T20:10:11Z",
+      "generated": "2026-08-12T09:33:01Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -663,7 +663,7 @@
               "GPLv1+"
             ],
             "name": "perl5",
-            "version": "5.42.2"
+            "version": "5.42.3"
           },
           {
             "licenses": [
@@ -696,7 +696,7 @@
               "UNLICENSE"
             ],
             "name": "ripgrep",
-            "version": "15.1.0_6"
+            "version": "15.2.0"
           },
           {
             "licenses": [
@@ -711,7 +711,7 @@
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "4.6.4"
+            "version": "4.6.6"
           },
           {
             "licenses": [

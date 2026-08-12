@@ -20,7 +20,7 @@ VS Code in the browser — run a full development environment on your FreeBSD se
 ## Version Tags
 | Tag | Description | Best For |
 | :--- | :--- | :--- |
-| `latest` | **Upstream Binary**. Built from official release. | Most users. Matches Linux Docker behavior. |
+| `latest` | **Upstream Binary**. Built from official release. | Most users — recommended. |
 
 ## Prerequisites
 Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.
@@ -76,7 +76,7 @@ services:
     name: code_server
     options:
       - container: 'boot args:--pull'
-      - expose: '8080:8080 proto:tcp' \
+      - expose: '8080:8080 proto:tcp'
     oci:
       user: root
       environment:
