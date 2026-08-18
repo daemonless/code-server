@@ -45,8 +45,7 @@ services:
       - "/path/to/containers/code-server:/config"
     ports:
       - "8080:8080"
-    # always (not unless-stopped) so FreeBSD's podman rc.d auto-starts it at boot
-    restart: always
+    restart: unless-stopped
 ```
 
 ### AppJail Director
