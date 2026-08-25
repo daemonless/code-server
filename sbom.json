@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-18T19:55:25Z",
+  "generated": "2026-08-25T06:50:37Z",
   "image": "code-server",
   "tags": {
     "latest": {
-      "app_version": "4.133.0",
+      "app_version": "4.134.0",
       "arch": "amd64",
-      "generated": "2026-08-18T19:53:09Z",
+      "generated": "2026-08-25T06:48:50Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -302,7 +302,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.126.1"
+            "version": "3.127"
           },
           {
             "licenses": [
@@ -711,7 +711,7 @@
               "PSFL"
             ],
             "name": "python312",
-            "version": "3.12.13_4"
+            "version": "3.12.14"
           },
           {
             "licenses": [
@@ -807,12 +807,12 @@
           {
             "name": "@github/copilot",
             "purl": "",
-            "version": "1.0.78"
+            "version": "1.0.80"
           },
           {
             "name": "@github/copilot-sdk",
             "purl": "",
-            "version": "1.0.9"
+            "version": "1.0.11"
           },
           {
             "name": "@isaacs/fs-minipass",
@@ -857,7 +857,7 @@
           {
             "name": "@microsoft/mxc-sdk",
             "purl": "",
-            "version": "0.6.1"
+            "version": "0.7.0"
           },
           {
             "name": "@npmcli/agent",
@@ -1302,12 +1302,12 @@
           {
             "name": "code-oss",
             "purl": "",
-            "version": "1.133.0"
+            "version": "1.135.0"
           },
           {
             "name": "code-server",
             "purl": "",
-            "version": "4.133.0"
+            "version": "4.134.0"
           },
           {
             "name": "coffeescript",
@@ -1367,7 +1367,7 @@
           {
             "name": "copilot-chat",
             "purl": "",
-            "version": "0.61.0"
+            "version": "0.63.0"
           },
           {
             "name": "corepack",
@@ -1862,7 +1862,7 @@
           {
             "name": "js-yaml",
             "purl": "",
-            "version": "4.3.0"
+            "version": "5.2.3"
           },
           {
             "name": "jschardet",
@@ -2667,7 +2667,7 @@
           {
             "name": "tas-client",
             "purl": "",
-            "version": "0.3.1"
+            "version": "0.4.3"
           },
           {
             "name": "terminal-suggest",
