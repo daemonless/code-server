@@ -45,8 +45,11 @@ services:
       - "/path/to/containers/code-server:/config"
     ports:
       - "8080:8080"
-    restart: unless-stopped
+    # always (not unless-stopped) so FreeBSD's podman rc.d auto-starts it at boot
+    restart: always
 ```
+
+Save as `compose.yaml`, then run `podman-compose up -d`.
 
 ### AppJail Director
 **.env**:
@@ -103,6 +106,9 @@ ARG tag=latest
 OPTION overwrite=force
 OPTION from=ghcr.io/daemonless/code-server:${tag}
 ```
+
+Save the files above, then run `appjail-director up`.
+
 **Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
 
 ### Podman CLI
@@ -119,6 +125,8 @@ podman run -d --name code-server \
   -v /path/to/containers/code-server:/config \
   ghcr.io/daemonless/code-server:latest
 ```
+
+Save as `run.sh`, then run `sh run.sh`.
 
 ### AppJail
 
@@ -138,7 +146,44 @@ appjail oci run -Pd \
   -o fstab="/path/to/containers/code-server /config <pseudofs>" \
   ghcr.io/daemonless/code-server:latest code-server
 ```
+
+Save as `run.sh`, then run `sh run.sh`.
+
 **Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
+
+### Bastille
+
+> [!WARNING]
+> Bastille's OCI support is **experimental**. It requires `buildah`, shares the host network stack (`inherit`), and persists image-declared volumes under `--data-path`.
+
+```yaml
+services:
+  code-server:
+    image: "ghcr.io/daemonless/code-server:latest"
+    container_name: code-server
+    network_mode: host  # jail shares host networking
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+      - PASSWORD=<PASSWORD>
+      - DEFAULT_WORKSPACE=
+      - DISABLE_MDO=
+```
+
+Save as `podman-compose.yml`, then run `bastille up`. Or via CLI:
+
+```bash
+bastille create -O \
+  --env PUID=1000 \
+  --env PGID=1000 \
+  --env TZ=UTC \
+  --env PASSWORD=<PASSWORD> \
+  --env DEFAULT_WORKSPACE= \
+  --env DISABLE_MDO= \
+  --data-path /path/to/containers/code-server \
+  code-server ghcr.io/daemonless/code-server:latest inherit
+```
 
 ### Ansible
 
@@ -161,6 +206,8 @@ appjail oci run -Pd \
     volumes:
       - "/path/to/containers/code-server:/config"
 ```
+
+Save as `code-server-deploy.yaml`, then run `ansible-playbook code-server-deploy.yaml`.
 
 Access at: `http://localhost:8080`
 

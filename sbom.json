@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-25T06:50:37Z",
+  "generated": "2026-08-27T23:01:44Z",
   "image": "code-server",
   "tags": {
     "latest": {
-      "app_version": "4.134.0",
+      "app_version": "4.135.0",
       "arch": "amd64",
-      "generated": "2026-08-25T06:48:50Z",
+      "generated": "2026-08-27T22:59:45Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -741,7 +741,7 @@
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "4.6.6"
+            "version": "4.6.8"
           },
           {
             "licenses": [
@@ -1077,52 +1077,52 @@
           {
             "name": "@xterm/addon-clipboard",
             "purl": "",
-            "version": "0.3.0-beta.292"
+            "version": "0.3.0-beta.301"
           },
           {
             "name": "@xterm/addon-image",
             "purl": "",
-            "version": "0.10.0-beta.292"
+            "version": "0.10.0-beta.299"
           },
           {
             "name": "@xterm/addon-ligatures",
             "purl": "",
-            "version": "0.11.0-beta.292"
+            "version": "0.11.0-beta.299"
           },
           {
             "name": "@xterm/addon-progress",
             "purl": "",
-            "version": "0.3.0-beta.292"
+            "version": "0.3.0-beta.299"
           },
           {
             "name": "@xterm/addon-search",
             "purl": "",
-            "version": "0.17.0-beta.292"
+            "version": "0.17.0-beta.299"
           },
           {
             "name": "@xterm/addon-serialize",
             "purl": "",
-            "version": "0.15.0-beta.292"
+            "version": "0.15.0-beta.299"
           },
           {
             "name": "@xterm/addon-unicode11",
             "purl": "",
-            "version": "0.10.0-beta.292"
+            "version": "0.10.0-beta.299"
           },
           {
             "name": "@xterm/addon-webgl",
             "purl": "",
-            "version": "0.20.0-beta.291"
+            "version": "0.20.0-beta.298"
           },
           {
             "name": "@xterm/headless",
             "purl": "",
-            "version": "6.1.0-beta.292"
+            "version": "6.1.0-beta.301"
           },
           {
             "name": "@xterm/xterm",
             "purl": "",
-            "version": "6.1.0-beta.292"
+            "version": "6.1.0-beta.302"
           },
           {
             "name": "abbrev",
@@ -1307,7 +1307,7 @@
           {
             "name": "code-server",
             "purl": "",
-            "version": "4.134.0"
+            "version": "4.135.0"
           },
           {
             "name": "coffeescript",
