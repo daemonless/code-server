@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-08T21:46:35Z",
+  "generated": "2026-09-11T07:03:44Z",
   "image": "code-server",
   "tags": {
     "latest": {
-      "app_version": "4.136.2",
+      "app_version": "4.137.0",
       "arch": "amd64",
-      "generated": "2026-09-08T21:44:23Z",
+      "generated": "2026-09-11T07:01:02Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -302,7 +302,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.128"
+            "version": "3.129"
           },
           {
             "licenses": [
@@ -842,12 +842,12 @@
           {
             "name": "@github/copilot",
             "purl": "",
-            "version": "1.0.80"
+            "version": "1.0.83-2"
           },
           {
             "name": "@github/copilot-sdk",
             "purl": "",
-            "version": "1.0.11"
+            "version": "1.0.13-preview.4"
           },
           {
             "name": "@isaacs/fs-minipass",
@@ -1162,7 +1162,7 @@
           {
             "name": "@vscode/proxy-agent",
             "purl": "",
-            "version": "0.44.0"
+            "version": "0.45.0"
           },
           {
             "name": "@vscode/ripgrep-universal",
@@ -1212,52 +1212,52 @@
           {
             "name": "@xterm/addon-clipboard",
             "purl": "",
-            "version": "0.3.0-beta.301"
+            "version": "0.3.0-beta.302"
           },
           {
             "name": "@xterm/addon-image",
             "purl": "",
-            "version": "0.10.0-beta.299"
+            "version": "0.10.0-beta.300"
           },
           {
             "name": "@xterm/addon-ligatures",
             "purl": "",
-            "version": "0.11.0-beta.299"
+            "version": "0.11.0-beta.300"
           },
           {
             "name": "@xterm/addon-progress",
             "purl": "",
-            "version": "0.3.0-beta.299"
+            "version": "0.3.0-beta.300"
           },
           {
             "name": "@xterm/addon-search",
             "purl": "",
-            "version": "0.17.0-beta.299"
+            "version": "0.17.0-beta.300"
           },
           {
             "name": "@xterm/addon-serialize",
             "purl": "",
-            "version": "0.15.0-beta.299"
+            "version": "0.15.0-beta.300"
           },
           {
             "name": "@xterm/addon-unicode11",
             "purl": "",
-            "version": "0.10.0-beta.299"
+            "version": "0.10.0-beta.300"
           },
           {
             "name": "@xterm/addon-webgl",
             "purl": "",
-            "version": "0.20.0-beta.298"
+            "version": "0.20.0-beta.299"
           },
           {
             "name": "@xterm/headless",
             "purl": "",
-            "version": "6.1.0-beta.301"
+            "version": "6.1.0-beta.302"
           },
           {
             "name": "@xterm/xterm",
             "purl": "",
-            "version": "6.1.0-beta.302"
+            "version": "6.1.0-beta.303"
           },
           {
             "name": "abbrev",
@@ -1542,12 +1542,12 @@
           {
             "name": "code-oss",
             "purl": "",
-            "version": "1.136.1"
+            "version": "1.137.0"
           },
           {
             "name": "code-server",
             "purl": "",
-            "version": "4.136.2"
+            "version": "4.137.0"
           },
           {
             "name": "coffeescript",
@@ -1627,7 +1627,7 @@
           {
             "name": "copilot-chat",
             "purl": "",
-            "version": "0.64.1"
+            "version": "0.65.0"
           },
           {
             "name": "core-util-is",
@@ -3007,7 +3007,7 @@
           {
             "name": "qs",
             "purl": "",
-            "version": "6.15.2"
+            "version": "6.16.0"
           },
           {
             "name": "quick-lru",
@@ -3207,12 +3207,12 @@
           {
             "name": "side-channel",
             "purl": "",
-            "version": "1.1.0"
+            "version": "1.1.1"
           },
           {
             "name": "side-channel-list",
             "purl": "",
-            "version": "1.0.0"
+            "version": "1.0.1"
           },
           {
             "name": "side-channel-map",

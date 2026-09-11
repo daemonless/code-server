@@ -78,7 +78,7 @@ services:
   code-server:
     name: code_server
     options:
-      - container: 'boot args:--pull'
+      - container: 'args:--pull'
       - expose: '8080:8080 proto:tcp'
     oci:
       user: root
@@ -103,13 +103,18 @@ volumes:
 
 ARG tag=latest
 
+OPTION container=boot
 OPTION overwrite=force
 OPTION from=ghcr.io/daemonless/code-server:${tag}
 ```
 
 Save the files above, then run `appjail-director up`.
 
-**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
+
+> [!WARNING]
+> Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the jail's IPv4 address or hostname assigned by the virtual network.
+>
+> To avoid exposing ports, just remove the `expose` option in your `appjail-director.yml` or from your command-line arguments.
 
 ### Podman CLI
 
@@ -130,6 +135,7 @@ Save as `run.sh`, then run `sh run.sh`.
 
 ### AppJail
 
+
 ```bash
 appjail oci run -Pd \
   -o overwrite=force \
@@ -147,21 +153,26 @@ appjail oci run -Pd \
   ghcr.io/daemonless/code-server:latest code-server
 ```
 
-Save as `run.sh`, then run `sh run.sh`.
+Save the files above, then run `sh run.sh`.
 
-**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
+
+> [!WARNING]
+> Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the jail's IPv4 address or hostname assigned by the virtual network.
+>
+> To avoid exposing ports, just remove the `expose` option in your `appjail-director.yml` or from your command-line arguments.
 
 ### Bastille
 
 > [!WARNING]
-> Bastille's OCI support is **experimental**. It requires `buildah`, shares the host network stack (`inherit`), and persists image-declared volumes under `--data-path`.
+> Bastille's OCI support is **experimental**. It requires `buildah` and shares the host network stack (`inherit`). Mount volumes with `--volume HOST JAIL`; without it, image-declared volumes are stored under `${bastille_volumesdir}/${jail}`.
 
 ```yaml
 services:
   code-server:
+    name: code-server
     image: "ghcr.io/daemonless/code-server:latest"
-    container_name: code-server
-    network_mode: host  # jail shares host networking
+    network:
+      - mode: host
     environment:
       - PUID=1000
       - PGID=1000
@@ -169,9 +180,11 @@ services:
       - PASSWORD=<PASSWORD>
       - DEFAULT_WORKSPACE=
       - DISABLE_MDO=
+    volumes:
+      - "/path/to/containers/code-server:/config"
 ```
 
-Save as `podman-compose.yml`, then run `bastille up`. Or via CLI:
+Save as `bastille-compose.yml`, then run `bastille up`. Or via CLI:
 
 ```bash
 bastille create -O \
@@ -181,7 +194,7 @@ bastille create -O \
   --env PASSWORD=<PASSWORD> \
   --env DEFAULT_WORKSPACE= \
   --env DISABLE_MDO= \
-  --data-path /path/to/containers/code-server \
+  --volume /path/to/containers/code-server /config \
   code-server ghcr.io/daemonless/code-server:latest inherit
 ```
 
