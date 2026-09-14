@@ -7,6 +7,7 @@ Source: dbuild templates
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/daemonless/code-server/build.yaml?style=flat-square&label=Build&color=green)](https://github.com/daemonless/code-server/actions)
 [![Last Commit](https://img.shields.io/github/last-commit/daemonless/code-server?style=flat-square&label=Last+Commit&color=blue)](https://github.com/daemonless/code-server/commits)
+[![OCI Pulls](https://img.shields.io/docker/pulls/daemonless/code-server?style=flat-square&label=OCI+Pulls&color=blue)](https://hub.docker.com/r/daemonless/code-server)
 
 VS Code in the browser — run a full development environment on your FreeBSD server and access it from anywhere.
 
@@ -255,9 +256,25 @@ Access at: `http://localhost:8080`
 Common dev tools (gcc, clang, llvm, python, gmake, git, ssh) are baked into the image for now.
 
 ## Running commands as `root` in Terminal
-Podman strips the setuid bit from binaries at runtime, so `sudo`, `su`, and `doas` will not work inside the code-server terminal.  
+`doas` works out of the box -- it is setuid and configured with
+`permit nopass keepenv bsd`:
+```sh
+doas pkg install rust cargo
+```
+`sudo` is a shim that execs `doas`, so it works too. `-E` and `-H` are accepted
+and ignored (`doas.conf` already uses `keepenv`); other flags pass through.
 
-To allow running commands as the `root` user, we can use FreeBSD's MAC framework and the `mdo` command which does not depend on the setuid bit being set.
+`su` works as well: the image ships `FreeBSD-pam`, without which it fails with
+`su: pam_start: System error`.
+
+!!! note "Requires Podman 5.8.4 or newer"
+    Older Podman dropped the setuid bit while unpacking images on FreeBSD, so
+    `doas`, `sudo` and `su` all failed in the container. Fixed by
+    [container-libs#935](https://github.com/podman-container-tools/container-libs/pull/935).
+    On older Podman, use `mdo` below.
+
+As an alternative that does not depend on the setuid bit, FreeBSD's MAC framework
+provides the `mdo` command.
 The `mac_do` kernel module has to be loaded on the host which runs Podman before the container is started.  
 You can load the module at runtime by running
 ```sh
@@ -279,12 +296,16 @@ services:
 ```    
 
 ## Installing Packages
-If the `mac_do` module is loaded on the host you can install packages in the terminal by running
+In the terminal:
+```sh
+doas pkg install rust cargo
+```
+Or, if the `mac_do` module is loaded on the host:
 ```sh
 mdo pkg install...
 ```
 
-If the module is not loaded or if `DISABLE_MDO` is set to `true` you have to install additional packages from the host using `podman exec`:
+You can also install packages from the host using `podman exec`:
 ```sh
 # Podman
 doas podman exec -it -u root code-server pkg install rust cargo

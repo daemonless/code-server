@@ -1,0 +1,4 @@
+#!/bin/sh
+# sudo(8) shim -> doas(1). -E/-H are no-ops: doas.conf already uses keepenv.
+while [ "$1" = "-E" ] || [ "$1" = "-H" ]; do shift; done
+exec doas "$@"
