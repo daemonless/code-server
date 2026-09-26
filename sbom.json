@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-19T21:24:00Z",
+  "generated": "2026-09-26T14:31:33Z",
   "image": "code-server",
   "tags": {
     "latest": {
-      "app_version": "4.138.0",
+      "app_version": "4.139.1",
       "arch": "amd64",
-      "generated": "2026-09-19T21:22:11Z",
+      "generated": "2026-09-26T14:29:02Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -816,6 +816,11 @@
             "version": "3.0.1"
           },
           {
+            "name": "@devcontainers/cli",
+            "purl": "",
+            "version": "0.88.0"
+          },
+          {
             "name": "@electron/asar",
             "purl": "",
             "version": "3.4.1"
@@ -861,14 +866,9 @@
             "version": "1.0.3"
           },
           {
-            "name": "@github/copilot",
-            "purl": "",
-            "version": "1.0.84-4"
-          },
-          {
             "name": "@github/copilot-sdk",
             "purl": "",
-            "version": "1.0.13"
+            "version": "1.0.15-unstable.35393089353.gfc44743"
           },
           {
             "name": "@isaacs/fs-minipass",
@@ -883,7 +883,7 @@
           {
             "name": "@koromix/koffi-freebsd-x64",
             "purl": "",
-            "version": "3.1.2"
+            "version": "3.2.1"
           },
           {
             "name": "@malept/cross-spawn-promise",
@@ -1563,12 +1563,12 @@
           {
             "name": "code-oss",
             "purl": "",
-            "version": "1.138.0"
+            "version": "1.139.1"
           },
           {
             "name": "code-server",
             "purl": "",
-            "version": "4.138.0"
+            "version": "4.139.1"
           },
           {
             "name": "coffeescript",
@@ -1648,7 +1648,7 @@
           {
             "name": "copilot-chat",
             "purl": "",
-            "version": "0.66.0"
+            "version": "0.67.0"
           },
           {
             "name": "core-util-is",
@@ -2403,7 +2403,7 @@
           {
             "name": "koffi",
             "purl": "",
-            "version": "3.1.2"
+            "version": "3.2.1"
           },
           {
             "name": "latex",
@@ -2983,7 +2983,7 @@
           {
             "name": "proxy-addr",
             "purl": "",
-            "version": "2.0.7"
+            "version": "2.0.8"
           },
           {
             "name": "proxy-agent",
