@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-28T17:23:36Z",
+  "generated": "2026-10-02T12:31:59Z",
   "image": "code-server",
   "tags": {
     "latest-aarch64": {
-      "app_version": "4.139.1",
+      "app_version": "4.140.0",
       "arch": "aarch64",
-      "generated": "2026-09-28T17:22:27Z",
+      "generated": "2026-10-02T12:30:57Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -224,7 +224,7 @@
               "ISCL"
             ],
             "name": "FreeBSD-ssh",
-            "version": "15.1"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -238,7 +238,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-toolchain",
-            "version": "15.1"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -316,7 +316,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.129"
+            "version": "3.130"
           },
           {
             "licenses": [
@@ -861,7 +861,7 @@
           {
             "name": "@github/copilot-sdk",
             "purl": "",
-            "version": "1.0.15-unstable.35393089353.gfc44743"
+            "version": "1.0.15-preview.4"
           },
           {
             "name": "@isaacs/fs-minipass",
@@ -1551,12 +1551,12 @@
           {
             "name": "code-oss",
             "purl": "",
-            "version": "1.139.1"
+            "version": "1.140.0"
           },
           {
             "name": "code-server",
             "purl": "",
-            "version": "4.139.1"
+            "version": "4.140.0"
           },
           {
             "name": "coffeescript",
@@ -1636,7 +1636,7 @@
           {
             "name": "copilot-chat",
             "purl": "",
-            "version": "0.67.0"
+            "version": "0.68.0"
           },
           {
             "name": "core-util-is",
@@ -2296,7 +2296,7 @@
           {
             "name": "js-debug",
             "purl": "",
-            "version": "1.117.0"
+            "version": "1.140.0"
           },
           {
             "name": "js-debug-companion",
