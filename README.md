@@ -43,7 +43,7 @@ services:
       - DEFAULT_WORKSPACE=  # Default folder opened in the editor (default: /config/workspace)
       - DISABLE_MDO=  # Do not use FreeBSD's mac_do facility to allow executing commands as root from the terminal (optional)
     volumes:
-      - "/path/to/containers/code-server:/config"
+      - "/containers/code-server:/config"
     ports:
       - "8080:8080"
     # always (not unless-stopped) so FreeBSD's podman rc.d auto-starts it at boot
@@ -94,7 +94,7 @@ services:
       - code-server: /config
 volumes:
   code-server:
-    device: '/path/to/containers/code-server'
+    device: '/containers/code-server'
 ```
 
 **Makejail**:
@@ -110,51 +110,6 @@ OPTION from=ghcr.io/daemonless/code-server:${tag}
 ```
 
 Save the files above, then run `appjail-director up`.
-
-
-> [!WARNING]
-> Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the jail's IPv4 address or hostname assigned by the virtual network.
->
-> To avoid exposing ports, just remove the `expose` option in your `appjail-director.yml` or from your command-line arguments.
-
-### Podman CLI
-
-```bash
-podman run -d --name code-server \
-  -p 8080:8080 \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=UTC \
-  -e PASSWORD=<PASSWORD> \
-  -e DEFAULT_WORKSPACE= \
-  -e DISABLE_MDO= \
-  -v /path/to/containers/code-server:/config \
-  ghcr.io/daemonless/code-server:latest
-```
-
-Save as `run.sh`, then run `sh run.sh`.
-
-### AppJail
-
-
-```bash
-appjail oci run -Pd \
-  -o overwrite=force \
-  -o container="args:--pull" \
-  -o virtualnet=":<random> default" \
-  -o nat \
-  -o expose="8080:8080 proto:tcp" \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=UTC \
-  -e PASSWORD=<PASSWORD> \
-  -e DEFAULT_WORKSPACE= \
-  -e DISABLE_MDO= \
-  -o fstab="/path/to/containers/code-server /config <pseudofs>" \
-  ghcr.io/daemonless/code-server:latest code-server
-```
-
-Save the files above, then run `sh run.sh`.
 
 
 > [!WARNING]
@@ -182,46 +137,10 @@ services:
       - DEFAULT_WORKSPACE=
       - DISABLE_MDO=
     volumes:
-      - "/path/to/containers/code-server:/config"
+      - "/containers/code-server:/config"
 ```
 
-Save as `bastille-compose.yml`, then run `bastille up`. Or via CLI:
-
-```bash
-bastille create -O \
-  --env PUID=1000 \
-  --env PGID=1000 \
-  --env TZ=UTC \
-  --env PASSWORD=<PASSWORD> \
-  --env DEFAULT_WORKSPACE= \
-  --env DISABLE_MDO= \
-  --volume /path/to/containers/code-server /config \
-  code-server ghcr.io/daemonless/code-server:latest inherit
-```
-
-### Ansible
-
-```yaml
-- name: Deploy code-server
-  containers.podman.podman_container:
-    name: code-server
-    image: "ghcr.io/daemonless/code-server:latest"
-    state: started
-    restart_policy: always
-    env:
-      PUID: "1000"
-      PGID: "1000"
-      TZ: "UTC"
-      PASSWORD: "<PASSWORD>"
-      DEFAULT_WORKSPACE: ""
-      DISABLE_MDO: ""
-    ports:
-      - "8080:8080"
-    volumes:
-      - "/path/to/containers/code-server:/config"
-```
-
-Save as `code-server-deploy.yaml`, then run `ansible-playbook code-server-deploy.yaml`.
+Save as `bastille-compose.yml`, then run `bastille up`.
 
 Access at: `http://localhost:8080`
 
