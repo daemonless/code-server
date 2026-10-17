@@ -50,7 +50,7 @@ RUN python3 -c 'import json; p=json.load(open("lib/vscode/package.json")); p.get
 # Install lib/vscode deps first so the dir exists when code-server root install runs
 # --ignore-scripts: skip vscode's full TS build; npm rebuild compiles native modules only
 WORKDIR /usr/local/lib/node_modules/code-server/lib/vscode
-RUN npm install --unsafe-perm --omit=dev --ignore-scripts --no-audit --no-fund
+RUN npm install --omit=dev --ignore-scripts --no-audit --no-fund
 
 # FreeBSD compatibility patches — see patches/ for details
 COPY patches/ /tmp/patches/
@@ -64,7 +64,7 @@ RUN npm install --no-audit --no-fund @vscode/fs-copyfile && \
 
 # Install code-server root deps + run postinstall (compiles argon2, node-pty etc.)
 WORKDIR /usr/local/lib/node_modules/code-server
-RUN npm install --unsafe-perm --omit=dev --no-audit --no-fund
+RUN npm install --omit=dev --no-audit --no-fund
 
 # Create global symlink and record version
 RUN APP_VERSION=${APP_VERSION:-$(fetch -qo - "${UPSTREAM_URL}" | jq -r "${UPSTREAM_JQ}")} && \
