@@ -39,9 +39,9 @@ services:
       - PUID=1000  # User ID for the application process
       - PGID=1000  # Group ID for the application process
       - TZ=UTC  # Timezone for the container
-      - PASSWORD=<PASSWORD>  # Password for web UI (leave unset to disable auth)
-      - DEFAULT_WORKSPACE=  # Default folder opened in the editor (default: /config/workspace)
-      - DISABLE_MDO=  # Do not use FreeBSD's mac_do facility to allow executing commands as root from the terminal (optional)
+      # - PASSWORD=  # Password for web UI (leave unset to disable auth)
+      # - DEFAULT_WORKSPACE=  # Default folder opened in the editor (default: /config/workspace)
+      # - DISABLE_MDO=  # Do not use FreeBSD's mac_do facility to allow executing commands as root from the terminal (optional)
     volumes:
       - "/containers/code-server:/config"
     ports:
@@ -62,9 +62,6 @@ DIRECTOR_PROJECT=code-server
 PUID=1000
 PGID=1000
 TZ=UTC
-PASSWORD=<PASSWORD>
-DEFAULT_WORKSPACE=
-DISABLE_MDO=
 ```
 
 **appjail-director.yml**:
@@ -87,9 +84,6 @@ services:
         - PUID: !ENV '${PUID}'
         - PGID: !ENV '${PGID}'
         - TZ: !ENV '${TZ}'
-        - PASSWORD: !ENV '${PASSWORD}'
-        - DEFAULT_WORKSPACE: !ENV '${DEFAULT_WORKSPACE}'
-        - DISABLE_MDO: !ENV '${DISABLE_MDO}'
     volumes:
       - code-server: /config
 volumes:
@@ -133,9 +127,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=UTC
-      - PASSWORD=<PASSWORD>
-      - DEFAULT_WORKSPACE=
-      - DISABLE_MDO=
     volumes:
       - "/containers/code-server:/config"
 ```
