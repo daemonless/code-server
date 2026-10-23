@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-23T10:57:30Z",
+  "generated": "2026-10-23T22:40:44Z",
   "image": "code-server",
   "tags": {
     "latest-aarch64": {
-      "app_version": "4.141.0",
+      "app_version": "4.141.1",
       "arch": "aarch64",
-      "generated": "2026-10-23T10:56:28Z",
+      "generated": "2026-10-23T22:39:36Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1535,7 +1535,7 @@
           {
             "name": "code-server",
             "purl": "",
-            "version": "4.141.0"
+            "version": "4.141.1"
           },
           {
             "name": "coffeescript",
@@ -2165,7 +2165,7 @@
           {
             "name": "i18next",
             "purl": "",
-            "version": "26.5.6"
+            "version": "26.5.7"
           },
           {
             "name": "iconv-lite",
