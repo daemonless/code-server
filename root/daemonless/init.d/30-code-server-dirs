@@ -1,0 +1,7 @@
+#!/bin/sh
+# The workspace, data and extensions dirs, owned by bsd (as non-root, the
+# runtime owns /config).
+mkdir -p "${DEFAULT_WORKSPACE:-/config/workspace}" /config/data /config/extensions
+if [ "$(id -u)" = 0 ]; then
+    chown bsd:bsd "${DEFAULT_WORKSPACE:-/config/workspace}" /config/data /config/extensions
+fi

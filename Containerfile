@@ -73,7 +73,7 @@ RUN APP_VERSION=${APP_VERSION:-$(fetch -qo - "${UPSTREAM_URL}" | jq -r "${UPSTRE
     npm cache clean --force
 
 # Production image
-FROM ghcr.io/daemonless/base:${BASE_VERSION}
+FROM ghcr.io/daemonless/base-exec:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
 ARG APP_VERSION=""
@@ -116,9 +116,12 @@ RUN ln -sf /usr/local/lib/node_modules/code-server/out/node/entry.js /usr/local/
 
 # Copy root filesystem
 COPY root/ /
+RUN chmod +x /daemonless/libexec/code-server /daemonless/init.d/*
+
+CMD ["/daemonless/libexec/code-server"]
 
 # Set permissions
-RUN chmod +x /etc/services.d/code-server/run /etc/cont-init.d/* /healthz /usr/local/bin/sudo
+RUN chmod +x /healthz /usr/local/bin/sudo
 
 ENV HOME="/config"
 
