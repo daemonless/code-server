@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-17T13:32:48Z",
+  "generated": "2026-10-23T08:45:50Z",
   "image": "code-server",
   "tags": {
     "latest-aarch64": {
       "app_version": "4.141.0",
       "arch": "aarch64",
-      "generated": "2026-10-17T13:31:46Z",
+      "generated": "2026-10-23T08:44:50Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -217,7 +217,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p4"
+            "version": "15.1p5"
           },
           {
             "licenses": [
@@ -280,7 +280,7 @@
               "PD"
             ],
             "name": "FreeBSD-zoneinfo",
-            "version": "15.1p4"
+            "version": "15.1p5"
           },
           {
             "licenses": [
@@ -339,13 +339,6 @@
             ],
             "name": "doas",
             "version": "6.4"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "execline",
-            "version": "2.9.8.1"
           },
           {
             "licenses": [
@@ -725,7 +718,7 @@
               "PSFL"
             ],
             "name": "python312",
-            "version": "3.12.14_1"
+            "version": "3.12.15"
           },
           {
             "licenses": [
@@ -744,18 +737,11 @@
           },
           {
             "licenses": [
-              "ISCL"
-            ],
-            "name": "s6",
-            "version": "2.14.0.1"
-          },
-          {
-            "licenses": [
               "MIT",
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "5.0.1"
+            "version": "5.0.5"
           },
           {
             "licenses": [
@@ -764,13 +750,6 @@
             ],
             "name": "simdutf",
             "version": "9.2.1"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "skalibs",
-            "version": "2.14.5.1"
           },
           {
             "licenses": [
@@ -1411,7 +1390,7 @@
           {
             "name": "body-parser",
             "purl": "",
-            "version": "2.3.0"
+            "version": "2.4.0"
           },
           {
             "name": "brace-expansion",
@@ -2186,7 +2165,7 @@
           {
             "name": "i18next",
             "purl": "",
-            "version": "26.4.7"
+            "version": "26.5.6"
           },
           {
             "name": "iconv-lite",
@@ -2646,7 +2625,7 @@
           {
             "name": "nan",
             "purl": "",
-            "version": "2.29.0"
+            "version": "2.30.0"
           },
           {
             "name": "negotiator",
@@ -2771,7 +2750,7 @@
           {
             "name": "on-finished",
             "purl": "",
-            "version": "2.4.1"
+            "version": "2.4.2"
           },
           {
             "name": "on-headers",
@@ -4764,7 +4743,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 109,
+        "freebsd": 106,
         "go": 0,
         "java": 0,
         "node": 583,
@@ -4772,7 +4751,7 @@
         "python": 1,
         "ruby": 0,
         "rust": 207,
-        "total": 900
+        "total": 897
       }
     }
   }
