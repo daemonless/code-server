@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-23T10:25:12Z",
+  "generated": "2026-10-23T22:10:38Z",
   "image": "code-server",
   "tags": {
     "latest-amd64": {
-      "app_version": "4.141.0",
+      "app_version": "4.141.1",
       "arch": "amd64",
-      "generated": "2026-10-23T10:17:38Z",
+      "generated": "2026-10-23T22:05:56Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -323,7 +323,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.131"
+            "version": "3.131.1"
           },
           {
             "licenses": [
@@ -337,7 +337,7 @@
               "MIT"
             ],
             "name": "curl",
-            "version": "8.22.0"
+            "version": "8.23.0"
           },
           {
             "licenses": [
@@ -561,14 +561,6 @@
           },
           {
             "licenses": [
-              "MIT",
-              "APACHE20"
-            ],
-            "name": "merve",
-            "version": "1.2.2_3"
-          },
-          {
-            "licenses": [
               "LGPL3+"
             ],
             "name": "mpc",
@@ -600,7 +592,7 @@
               "MIT"
             ],
             "name": "node24",
-            "version": "24.21.0_1"
+            "version": "24.21.0_3"
           },
           {
             "licenses": [
@@ -749,14 +741,6 @@
             ],
             "name": "simdjson",
             "version": "5.0.5"
-          },
-          {
-            "licenses": [
-              "MIT",
-              "APACHE20"
-            ],
-            "name": "simdutf",
-            "version": "9.2.1"
           },
           {
             "licenses": [
@@ -1547,7 +1531,7 @@
           {
             "name": "code-server",
             "purl": "",
-            "version": "4.141.0"
+            "version": "4.141.1"
           },
           {
             "name": "coffeescript",
@@ -2177,7 +2161,7 @@
           {
             "name": "i18next",
             "purl": "",
-            "version": "26.5.6"
+            "version": "26.5.7"
           },
           {
             "name": "iconv-lite",
@@ -4755,7 +4739,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 107,
+        "freebsd": 105,
         "go": 0,
         "java": 0,
         "node": 584,
@@ -4763,7 +4747,7 @@
         "python": 1,
         "ruby": 0,
         "rust": 207,
-        "total": 899
+        "total": 897
       }
     }
   }
