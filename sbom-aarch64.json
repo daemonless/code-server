@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-24T09:33:52Z",
+  "generated": "2026-10-29T15:33:00Z",
   "image": "code-server",
   "tags": {
     "latest-aarch64": {
-      "app_version": "4.143.1",
+      "app_version": "4.144.0",
       "arch": "aarch64",
-      "generated": "2026-10-24T09:32:59Z",
+      "generated": "2026-10-29T15:31:42Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -217,7 +217,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p5"
+            "version": "15.1p6"
           },
           {
             "licenses": [
@@ -805,7 +805,7 @@
           {
             "name": "@github/copilot-sdk",
             "purl": "",
-            "version": "1.0.23-preview.5"
+            "version": "1.0.27-unstable.40031404408.gba6c003"
           },
           {
             "name": "@hpke/common",
@@ -1070,52 +1070,52 @@
           {
             "name": "@xterm/addon-clipboard",
             "purl": "",
-            "version": "0.3.0-beta.313"
+            "version": "0.3.0-beta.330"
           },
           {
             "name": "@xterm/addon-image",
             "purl": "",
-            "version": "0.10.0-beta.310"
+            "version": "0.10.0-beta.327"
           },
           {
             "name": "@xterm/addon-ligatures",
             "purl": "",
-            "version": "0.11.0-beta.310"
+            "version": "0.11.0-beta.327"
           },
           {
             "name": "@xterm/addon-progress",
             "purl": "",
-            "version": "0.3.0-beta.310"
+            "version": "0.3.0-beta.327"
           },
           {
             "name": "@xterm/addon-search",
             "purl": "",
-            "version": "0.17.0-beta.310"
+            "version": "0.17.0-beta.327"
           },
           {
             "name": "@xterm/addon-serialize",
             "purl": "",
-            "version": "0.15.0-beta.310"
+            "version": "0.15.0-beta.327"
           },
           {
             "name": "@xterm/addon-unicode11",
             "purl": "",
-            "version": "0.10.0-beta.310"
+            "version": "0.10.0-beta.327"
           },
           {
             "name": "@xterm/addon-webgl",
             "purl": "",
-            "version": "0.20.0-beta.309"
+            "version": "0.20.0-beta.326"
           },
           {
             "name": "@xterm/headless",
             "purl": "",
-            "version": "6.1.0-beta.313"
+            "version": "6.1.0-beta.330"
           },
           {
             "name": "@xterm/xterm",
             "purl": "",
-            "version": "6.1.0-beta.315"
+            "version": "6.1.0-beta.332"
           },
           {
             "name": "abbrev",
@@ -1170,7 +1170,7 @@
           {
             "name": "basic-ftp",
             "purl": "",
-            "version": "5.3.1"
+            "version": "6.2.3"
           },
           {
             "name": "bat",
@@ -1295,12 +1295,12 @@
           {
             "name": "code-oss",
             "purl": "",
-            "version": "1.143.1"
+            "version": "1.144.0"
           },
           {
             "name": "code-server",
             "purl": "",
-            "version": "4.143.1"
+            "version": "4.144.0"
           },
           {
             "name": "coffeescript",
@@ -1360,7 +1360,7 @@
           {
             "name": "copilot-chat",
             "purl": "",
-            "version": "0.71.0"
+            "version": "0.72.0"
           },
           {
             "name": "corepack",
@@ -1490,7 +1490,7 @@
           {
             "name": "encodeurl",
             "purl": "",
-            "version": "2.0.0"
+            "version": "2.0.1"
           },
           {
             "name": "env-paths",
@@ -1590,7 +1590,7 @@
           {
             "name": "follow-redirects",
             "purl": "",
-            "version": "1.16.1"
+            "version": "1.16.2"
           },
           {
             "name": "forwarded",
@@ -1760,7 +1760,7 @@
           {
             "name": "i18next",
             "purl": "",
-            "version": "26.5.8"
+            "version": "26.5.11"
           },
           {
             "name": "iconv-lite",
@@ -2046,11 +2046,6 @@
             "name": "md5",
             "purl": "",
             "version": "2.3.0"
-          },
-          {
-            "name": "media-preview",
-            "purl": "",
-            "version": "10.0.0"
           },
           {
             "name": "media-typer",
@@ -2430,7 +2425,7 @@
           {
             "name": "qs",
             "purl": "",
-            "version": "6.16.1"
+            "version": "6.17.1"
           },
           {
             "name": "r",
@@ -3021,12 +3016,12 @@
         "freebsd": 106,
         "go": 0,
         "java": 0,
-        "node": 435,
+        "node": 434,
         "php": 0,
         "python": 1,
         "ruby": 0,
         "rust": 10,
-        "total": 552
+        "total": 551
       }
     }
   }
