@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-04T19:08:04Z",
+  "generated": "2026-11-05T08:18:38Z",
   "image": "code-server",
   "tags": {
     "latest-amd64": {
-      "app_version": "4.144.0",
+      "app_version": "4.145.0",
       "arch": "amd64",
-      "generated": "2026-11-04T19:06:14Z",
+      "generated": "2026-11-05T08:16:34Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -796,7 +796,7 @@
           {
             "name": "@github/copilot-sdk",
             "purl": "",
-            "version": "1.0.27-unstable.40031404408.gba6c003"
+            "version": "1.0.27-unstable.41379698026.g3219c66"
           },
           {
             "name": "@hpke/common",
@@ -1141,7 +1141,7 @@
           {
             "name": "argon2",
             "purl": "",
-            "version": "0.44.0"
+            "version": "0.45.2"
           },
           {
             "name": "argparse",
@@ -1166,7 +1166,7 @@
           {
             "name": "basic-ftp",
             "purl": "",
-            "version": "6.2.5"
+            "version": "6.2.6"
           },
           {
             "name": "bat",
@@ -1291,12 +1291,12 @@
           {
             "name": "code-oss",
             "purl": "",
-            "version": "1.144.0"
+            "version": "1.145.0"
           },
           {
             "name": "code-server",
             "purl": "",
-            "version": "4.144.0"
+            "version": "4.145.0"
           },
           {
             "name": "coffeescript",
@@ -1356,7 +1356,7 @@
           {
             "name": "copilot-chat",
             "purl": "",
-            "version": "0.72.0"
+            "version": "0.73.0"
           },
           {
             "name": "corepack",
