@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-05T08:44:18Z",
+  "generated": "2026-11-07T08:22:14Z",
   "image": "code-server",
   "tags": {
     "latest-aarch64": {
-      "app_version": "4.145.0",
+      "app_version": "4.145.2",
       "arch": "aarch64",
-      "generated": "2026-11-05T08:42:44Z",
+      "generated": "2026-11-07T08:21:04Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -794,7 +794,7 @@
           {
             "name": "@hpke/common",
             "purl": "",
-            "version": "1.11.0"
+            "version": "1.12.0"
           },
           {
             "name": "@hpke/core",
@@ -1279,12 +1279,12 @@
           {
             "name": "code-oss",
             "purl": "",
-            "version": "1.145.0"
+            "version": "1.145.2"
           },
           {
             "name": "code-server",
             "purl": "",
-            "version": "4.145.0"
+            "version": "4.145.2"
           },
           {
             "name": "coffeescript",
@@ -1744,7 +1744,7 @@
           {
             "name": "i18next",
             "purl": "",
-            "version": "26.7.1"
+            "version": "26.7.2"
           },
           {
             "name": "iconv-lite",
