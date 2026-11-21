@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-21T11:18:02Z",
+  "generated": "2026-11-21T12:04:40Z",
   "image": "code-server",
   "tags": {
     "latest-aarch64": {
       "app_version": "4.146.0",
       "arch": "aarch64",
-      "generated": "2026-11-21T11:16:40Z",
+      "generated": "2026-11-21T12:03:16Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
